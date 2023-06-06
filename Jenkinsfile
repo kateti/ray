@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh 'pwd'
 		sh 'cd $pwd'
-		sh 'ls | wc -l'' 
+		sh 'ls | wc -l'
 		echo 'count the number of files please!'
             }
         }
