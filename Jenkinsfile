@@ -13,8 +13,8 @@ pipeline {
 			success {
 			   echo 'This pipeline tage ran without error!'
 			}	
-			unsuccessful {
-			echo 'You need to review your code please!'
+			failure {
+				echo 'You need to review your code please!'
 			}
 		}
         }
