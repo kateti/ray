@@ -7,7 +7,7 @@ pipeline {
                 sh 'pwd'
 		sh 'cd $pwd'
 		sh 'ls | wc -l'
-		ech 'count the number of files please!'
+		echo 'that is counted number of files please!'
             }
 		post {
 			success {
