@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh 'pwd'
 		sh 'cd $pwd'
-		echo 'there are sh 'ls | wc -l'' 
+		sh 'ls | wc -l'' 
 		echo 'count the number of files please!'
             }
         }
@@ -20,10 +20,7 @@ pipeline {
     }
 
   post {
-	always {
-		echo 'This Jenkinsfile pipeline training was susccefully completed!'
-	}
-	  failure {
+	failure {
 	  	echo 'The runtime failed this time please!'
 	  }
  }
