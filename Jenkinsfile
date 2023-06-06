@@ -18,10 +18,11 @@ pipeline {
             }
         }
     }
-}
-post {
+
+  post {
 	always {
-		echo "pipeline project is susccefully completed!"
+		echo 'This Jenkinsfilepipeline training was susccefully completed!'
 	}	
+ }
 }
 	
