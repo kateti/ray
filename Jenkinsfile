@@ -19,3 +19,9 @@ pipeline {
         }
     }
 }
+post {
+	always {
+		echo "pipeline project is susccefully completed!"
+	}	
+}
+	
