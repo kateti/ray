@@ -9,6 +9,14 @@ pipeline {
 		sh 'ls | wc -l'
 		ech 'count the number of files please!'
             }
+		post {
+			success {
+			   echo 'This pipeline tage ran without error!'
+			}	
+			unsuccessful {
+			echo 'You need to review your code please!'
+			}
+		}
         }
         stage('Example Test') {
            
@@ -19,10 +27,5 @@ pipeline {
         }
     }
 
-  post {
-	failure {
-	  	echo 'The runtime failed this time please!'
-	  }
- }
-}
+  }
 	
