@@ -2,13 +2,10 @@ pipeline {
 	
     
     stages {
-	stage('Example Build') {
+	stage('Create docker image') {
 	   agent {label 'centos'}   /* creating the docker image. */
             steps {
-                sh 'pwd'
-		sh 'cd $pwd'
-		sh 'ls | wc -l'
-		echo 'that is counted number of files please!'
+                sh 'docker build -t testpipe'
             }
 		post {
 			success {
@@ -19,11 +16,10 @@ pipeline {
 			}
 		}
         }
-        stage('Example Test') {
-           
+        stage('Create docker container') {
+            agent {label 'pull'}
             steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
+                sh 'docker run -dit --name ohurassa/testpipe'
             }
         }
     }
