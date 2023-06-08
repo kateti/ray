@@ -1,8 +1,9 @@
 pipeline {
-    agent any
+	
     
     stages {
-        stage('Example Build') {
+	stage('Example Build') {
+	   agent {label 'centos'}   /* creating the docker image. */
             steps {
                 sh 'pwd'
 		sh 'cd $pwd'
